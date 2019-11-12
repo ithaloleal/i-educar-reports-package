@@ -406,6 +406,54 @@ class RelatoriosPersonalizados extends Migration
             'old' => 999728,
             'process' => 999728,
         ]);
+
+        Menu::query()->updateOrCreate([
+            'old' => 997900
+        ],[
+            'parent_id' => Menu::query()->where('old', 999923)->firstOrFail()->getKey(),
+            'title' => 'Alunos matriculados por sexo',
+            'description' => null,
+            'link' => '/module/Reports/StudentsBySexAndSchool',
+            'order' => 0,
+            'old' => 997900,
+            'process' => 997900,
+        ]);
+
+        Menu::query()->updateOrCreate([
+            'old' => 997901
+        ],[
+            'parent_id' => Menu::query()->where('old', 999102)->firstOrFail()->getKey(),
+            'title' => 'Declaração de escolaridade',
+            'description' => null,
+            'link' => '/module/Reports/StatementOfSchooling',
+            'order' => 0,
+            'old' => 997901,
+            'process' => 997901,
+        ]);
+
+        Menu::query()->updateOrCreate([
+            'old' => 997902
+        ],[
+            'parent_id' => Menu::query()->where('old', 999914)->firstOrFail()->getKey(),
+            'title' => 'Relação de admissões e desligamentos dos servidores',
+            'description' => null,
+            'link' => '/module/Reports/ServantsHiringAndDismissal',
+            'order' => 0,
+            'old' => 997902,
+            'process' => 997902,
+        ]);
+
+        Menu::query()->updateOrCreate([
+            'old' => 997903
+        ],[
+            'parent_id' => Menu::query()->where('old', 999923)->firstOrFail()->getKey(),
+            'title' => 'Balanço de vagas',
+            'description' => null,
+            'link' => '/module/Reports/VacancySwing',
+            'order' => 0,
+            'old' => 997903,
+            'process' => 997903,
+        ]);
     }
 
     /**
